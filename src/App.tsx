@@ -22,11 +22,15 @@ function App() {
 
     setAppointments((prev) => [...prev, newAppointment]);
 
-    // limpa
     setHour("");
     setClient("");
   }
 
+
+  function removeAppointment(id: string){
+    setAppointments((prev) => 
+    prev.filter((appointment) => appointment.id !== id))
+  }
   return (
     <div className="flex text-gray-100 p-3 relative">
       <Logo />
@@ -47,6 +51,7 @@ function App() {
           date={date}
           onDateChange={setDate}
           appointments={appointments}
+          onRemoveAppointment={removeAppointment}
         />{" "}
       </main>
     </div>

@@ -2,6 +2,7 @@ import CalendarInput from "./inputs/CalendarInput";
 import SunHorizon from "../assets/icons/SunHorizon.svg?react";
 import CloudSun from "../assets/icons/CloudSun.svg?react";
 import MoonStars from "../assets/icons/MoonStars.svg?react";
+import TrashIcon from "../assets/icons/TrashIcon.svg?react";
 import Text from "./Text";
 import type { Appointment } from "../types/Appointment";
 
@@ -24,12 +25,14 @@ interface ScheduleListProps {
   date: string;
   onDateChange: (date: string) => void;
   appointments: Appointment[];
+  onRemoveAppointment: (id: string) => void;
 }
 
 export default function ScheduleList({
   date,
   onDateChange,
   appointments,
+  onRemoveAppointment,
 }: ScheduleListProps) {
   const appointmentsByDate = appointments.filter(
     (appointment) => appointment.date === date,
@@ -110,18 +113,47 @@ export default function ScheduleList({
                 </Text>
               )}
 
-              <div className="">
+              <div className="p-5">
                 {periodAppointments.map((appointment) => (
                   <div
                     key={appointment.id}
-                    className="flex justify-between items-center bg-gray-700 p-4 rounded-lg"
+                    className="
+    relative group
+    flex justify-between items-center
+    rounded-lg mt-1 mb-1 pb-2
+  "
                   >
-                    <Text as="p" variant="title-sm-bold">
-                      {appointment.hour}
-                    </Text>
-                    <Text as="p" className="text-gray-300">
-                      {appointment.client}
-                    </Text>
+                    <div className="flex">
+                      <Text as="p" variant="title-md-bold" className="mr-5">
+                        {appointment.hour}
+                      </Text>
+
+                      <Text as="p" className="text-gray-300">
+                        {appointment.client.charAt(0).toUpperCase() +
+                          appointment.client.slice(1).toLowerCase()}
+                      </Text>
+                    </div>
+
+                    <div className="cursor-pointer">
+                      <TrashIcon
+                        onClick={() => onRemoveAppointment(appointment.id)}
+                        className="w-4 h-4"
+                        fill="#b8952e"
+                      />
+                    </div>
+
+                    <span
+                      className="
+      pointer-events-none
+      absolute left-0 bottom-0
+      h-0.5 w-full
+      bg-yellow
+      scale-x-0
+      origin-left
+      transition-transform duration-300
+      group-hover:scale-x-100
+    "
+                    />
                   </div>
                 ))}
               </div>
