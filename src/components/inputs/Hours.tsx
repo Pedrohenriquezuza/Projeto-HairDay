@@ -41,16 +41,17 @@ export default function Hours({ value, onChange, date, appointments }: Props) {
 
               return (
                 <button
+                  type="button"
                   key={hour}
                   disabled={isOccupied}
                   onClick={() => onChange(hour)}
                   className={`
-                    h-10 w-19.5 rounded-xl text-sm border-2
+                    h-10 w-19.5 rounded-xl text-sm border-2 hover:bg-gray-500
                     ${
                       isOccupied
                         ? "bg-gray-700 border-gray-600 text-gray-500 cursor-not-allowed"
                         : isSelected
-                          ? "bg-yellow border-yellow text-gray-900"
+                          ? "bg-gray-600 border-yellow text-yellow"
                           : "bg-gray-600 border-gray-500"
                     }
                   `}

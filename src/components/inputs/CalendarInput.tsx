@@ -4,8 +4,7 @@ type Props = {
   value: string;
   onChange: (date: string) => void;
 };
-export default function CalendarInput({value, onChange}: Props) {
-  
+export default function CalendarInput({ value, onChange }: Props) {
   return (
     <div className="relative mt-2">
       <CalendarIcon
@@ -15,7 +14,7 @@ export default function CalendarInput({value, onChange}: Props) {
       />
 
       <input
-      required
+        required
         type="date"
         value={value}
         onChange={(e) => onChange(e.target.value)}
@@ -23,7 +22,7 @@ export default function CalendarInput({value, onChange}: Props) {
         className="h-12 mr-3
     bg-transparent
     w-full
-    [&::-webkit-calendar-picker-indicator]:opacity-0 border border-gray-500 rounded-lg pl-10 relative
+    [&::-webkit-calendar-picker-indicator]:opacity-0 border-2 border-gray-500 rounded-lg pl-10 relative outline-0 focus:border-2 focus:border-yellow-dark
   "
       />
       <CaretDown

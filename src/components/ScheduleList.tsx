@@ -108,7 +108,10 @@ export default function ScheduleList({
                 </div>
               </div>
               {periodAppointments.length === 0 && (
-                <Text as="p" className="mt-2 text-gray-400">
+                <Text
+                  as="p"
+                  className="flex text-center align-center justify-center mt-5  text-gray-400"
+                >
                   Você ainda não tem agendamentos cadastrados nesse período.
                 </Text>
               )}

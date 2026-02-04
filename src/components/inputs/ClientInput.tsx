@@ -15,7 +15,8 @@ export default function ClientInput({ value, onChange }: Props) {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Nome do cliente"
-        className="h-12 border-2 border-gray-500 rounded-lg w-full pl-9  text-gray-200 placeholder:text-gray-200"
+        className={`h-12 border-2 border-gray-500 rounded-lg w-full pl-9  text-gray-200 placeholder:text-gray-200
+         outline-0 focus:border-2 focus:border-yellow-dark`}
       />
     </div>
   );
