@@ -14,7 +14,7 @@ export default function ClientInput({ value, onChange }: Props) {
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        placeholder="Maria Luiza"
+        placeholder="Nome do cliente"
         className="h-12 border-2 border-gray-500 rounded-lg w-full pl-9  text-gray-200 placeholder:text-gray-200"
       />
     </div>

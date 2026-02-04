@@ -31,8 +31,10 @@ export default function SideBar({
   appointments,
   onCreateAppointment,
 }: SidebarProps) {
+  const isFormValid = Boolean(date && hour && client);
   function handleCreateAppontment(e: React.FormEvent) {
     e.preventDefault();
+    if (!isFormValid) return;
     onCreateAppointment();
   }
   return (
@@ -71,7 +73,7 @@ export default function SideBar({
           </Text>
         </fieldset>
 
-        <SubmitButton onClick={onCreateAppointment}>
+        <SubmitButton disabled={!isFormValid} onClick={onCreateAppointment}>
           <Text as="h2" variant="title-sm-bold" className="text-gray-900">
             AGENDAR
           </Text>
