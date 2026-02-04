@@ -15,6 +15,7 @@ export default function CalendarInput({value, onChange}: Props) {
       />
 
       <input
+      required
         type="date"
         value={value}
         onChange={(e) => onChange(e.target.value)}

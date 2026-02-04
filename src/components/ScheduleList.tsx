@@ -1,4 +1,7 @@
 import CalendarInput from "./inputs/CalendarInput";
+import SunHorizon from "../assets/icons/SunHorizon.svg?react";
+import CloudSun from "../assets/icons/CloudSun.svg?react";
+import MoonStars from "../assets/icons/MoonStars.svg?react";
 import Text from "./Text";
 import type { Appointment } from "../types/Appointment";
 
@@ -59,19 +62,55 @@ export default function ScheduleList({
             period.hours.includes(appointment.hour),
           );
 
-          return (
-            <div key={period.label} className="mt-10">
-              <Text as="h3" variant="title-md-bold">
-                {period.label}
-              </Text>
+          const isMorning = period.label === "Manhã";
+          const isAfternoon = period.label === "Tarde";
+          const isNight = period.label === "Noite";
 
+          return (
+            <div
+              key={period.label}
+              className="mt-10 border border-gray-600 rounded-lg "
+            >
+              <div className="flex justify-between px-5 py-3 border-b border-b-gray-600">
+                <div className="flex gap-3  ">
+                  {isMorning && (
+                    <div className="text-gray-400 text-sm">
+                      <SunHorizon className="w-5 h-5" fill="#b8952e" />
+                    </div>
+                  )}
+                  {isAfternoon && (
+                    <div className="text-gray-400 text-sm">
+                      <CloudSun className="w-5 h-5" fill="#b8952e" />
+                    </div>
+                  )}
+                  {isNight && (
+                    <div className="text-gray-400 text-sm">
+                      <MoonStars className="w-5 h-5" fill="#b8952e" />
+                    </div>
+                  )}
+                  <Text as="h3" variant="title-md-bold">
+                    {period.label}
+                  </Text>
+                </div>
+                <div>
+                  {isMorning && (
+                    <div className="text-gray-400 text-sm">09h-12h</div>
+                  )}
+                  {isAfternoon && (
+                    <div className="text-gray-400 text-sm">13h-18h</div>
+                  )}
+                  {isNight && (
+                    <div className="text-gray-400 text-sm">19h-21h</div>
+                  )}
+                </div>
+              </div>
               {periodAppointments.length === 0 && (
                 <Text as="p" className="mt-2 text-gray-400">
                   Você ainda não tem agendamentos cadastrados nesse período.
                 </Text>
               )}
 
-              <div className="mt-4 space-y-2">
+              <div className="">
                 {periodAppointments.map((appointment) => (
                   <div
                     key={appointment.id}
