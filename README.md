@@ -1,4 +1,4 @@
-# 💈 Barber Schedule
+# 💈 Projeto Hairday 
 
 Aplicação de **agendamento para barbearia**, desenvolvida como projeto prático proposto pela **Rocketseat** após a conclusão do **primeiro módulo de React**.
 
