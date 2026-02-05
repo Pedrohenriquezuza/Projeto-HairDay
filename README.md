@@ -1,73 +1,93 @@
-# React + TypeScript + Vite
+# 💈 Barber Schedule
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação de **agendamento para barbearia**, desenvolvida como projeto prático proposto pela **Rocketseat** após a conclusão do **primeiro módulo de React**.
 
-Currently, two official plugins are available:
+O objetivo principal do projeto é **consolidar os fundamentos do React na prática**, trabalhando com **estado**, **componentização**, **comunicação entre componentes**, **TypeScript** e uma **lógica de negócio realista**, simulando um cenário do dia a dia.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Funcionalidades
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- 📅 **Seleção de data** para agendamento  
+- ⏰ **Seleção de horários disponíveis**, organizados por:
+  - Manhã
+  - Tarde
+  - Noite
+- 👤 **Cadastro do nome do cliente**
+- ➕ **Criação de novos agendamentos**
+- 📋 **Listagem de agendamentos por data**
+- 🗑️ **Remoção de agendamentos**
 
-## Expanding the ESLint configuration
+### 🚫 Validações
+- Não permite agendar sem:
+  - Data
+  - Horário
+  - Nome do cliente
+- Feedback visual para:
+  - Estados desabilitados
+  - Interações inválidas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🧠 Conceitos Trabalhados
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Este projeto aplica na prática conceitos fundamentais do **ecossistema React**, como:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### ⚛️ React
+- React Hooks
+  - `useState`
+- Componentização
+- Componentes reutilizáveis  
+  - `CalendarInput`
+  - `Hours`
+  - `ClientInput`
+  - `SubmitButton`
+- **State Lifting**
+- Estado centralizado no componente `App`
+- Comunicação entre componentes
+  - Props
+  - Callbacks
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🟦 TypeScript
+- Tipagem de props
+- Interfaces (`Appointment`)
+- `type-only imports`
+- Tipagem de eventos
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 📋 Manipulação de Listas
+- `map`
+- `filter`
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🖱️ Eventos
+- `onClick`
+- `onChange`
+- `onSubmit`
+
+### 🎨 UX / UI
+- Estados de:
+  - Hover
+  - Disabled
+- Feedback visual para o usuário
+- Layout moderno e responsivo
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **React**
+- **TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **SVG Icons**
+
+---
+
+🎓 Contexto Educacional
+
+Projeto desenvolvido como parte do curso da Rocketseat, após a conclusão do primeiro módulo de React, com o objetivo de transformar conceitos teóricos em uma aplicação real e funcional.
+
+👨‍💻 Autor
+
+Pedro Henrique
+Estudante de Desenvolvimento Web
+React • TypeScript 🚀
