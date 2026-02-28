@@ -1,4 +1,5 @@
 # 💈 Projeto Hairday 
+<img width="1772" height="846" alt="image" src="https://github.com/user-attachments/assets/174df423-7513-418d-9004-7da46186cc6b" />
 
 Aplicação de **agendamento para barbearia**, desenvolvida como projeto prático proposto pela **Rocketseat** após a conclusão do **primeiro módulo de React**.
 
@@ -91,3 +92,5 @@ Projeto desenvolvido como parte do curso da Rocketseat, após a conclusão do pr
 Pedro Henrique
 Estudante de Desenvolvimento Web
 React • TypeScript 🚀
+<img width="519" height="812" alt="image" src="https://github.com/user-attachments/assets/22d8d54e-0eae-49a8-8db2-d440a66d29dd" />
+
